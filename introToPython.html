@@ -2503,8 +2503,8 @@ What happens when you type the following? Why? What are the types? What are the 
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">Acreage</span><span class="o">=</span><span class="mf">234.5234</span>
-<span class="n">Label</span><span class="o">=</span><span class="s">&quot;Total area is approximately &quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">Acreage</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot; acres.&quot;</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">Acreage</span> <span class="o">=</span> <span class="mf">234.5234</span>
+<span class="n">Label</span> <span class="o">=</span> <span class="s">&quot;Total area is approximately &quot;</span><span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="n">Acreage</span><span class="p">,</span><span class="mi">1</span><span class="p">))</span> <span class="o">+</span> <span class="s">&quot; acres.&quot;</span>
 <span class="k">print</span><span class="p">(</span><span class="n">Label</span><span class="p">)</span>
 </pre></div>
 
@@ -2519,7 +2519,7 @@ What happens when you type the following? Why? What are the types? What are the 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="c">#If Label is character, convert it first:</span>
-<span class="n">Acreage</span><span class="o">=</span><span class="s">&quot;234.5234&quot;</span>
+<span class="n">Acreage</span> <span class="o">=</span> <span class="s">&quot;234.5234&quot;</span>
 <span class="nb">str</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">Acreage</span><span class="p">),</span><span class="mi">0</span><span class="p">))</span> <span class="c">#will still have .0 afterwards.  </span>
 </pre></div>
 
@@ -2548,9 +2548,9 @@ What happens when you type the following? Why? What are the types? What are the 
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c">#  &quot;int&quot; will truncate a float value</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># &quot;int&quot; will truncate a float value</span>
 <span class="k">print</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">Acreage</span><span class="p">))))</span>
-<span class="c">#We want to round instead.</span>
+<span class="c"># We want to round instead.</span>
 <span class="nb">str</span><span class="p">(</span><span class="nb">int</span><span class="p">(</span><span class="nb">round</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">Acreage</span><span class="p">),</span><span class="mi">0</span><span class="p">)))</span>
 </pre></div>
 
@@ -2588,9 +2588,10 @@ What happens when you type the following? Why? What are the types? What are the 
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="n">fc</span><span class="o">=</span><span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="s">&quot;*Water*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="c">#Pick the first feature class with &quot;Water&quot; in the name</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># Pick the first feature class with &quot;Water&quot; in the name</span>
+<span class="n">fc</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">ListFeatureClasses</span><span class="p">(</span><span class="s">&quot;*Water*&quot;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="k">print</span><span class="p">(</span><span class="n">fc</span><span class="p">)</span>
-<span class="n">fieldlist</span><span class="o">=</span><span class="n">arcpy</span><span class="o">.</span><span class="n">ListFields</span><span class="p">(</span><span class="n">fc</span><span class="p">)</span>
+<span class="n">fieldlist</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">ListFields</span><span class="p">(</span><span class="n">fc</span><span class="p">)</span>
 <span class="k">print</span><span class="p">([</span><span class="n">f</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">f</span> <span class="ow">in</span> <span class="n">fieldlist</span><span class="p">])</span>
 </pre></div>
 
@@ -2612,14 +2613,22 @@ What happens when you type the following? Why? What are the types? What are the 
 </div>
 
 </div>
+<div class="cell border-box-sizing text_cell rendered">
+<div class="prompt input_prompt">
+</div>
+<div class="inner_cell">
+<div class="text_cell_render border-box-sizing rendered_html">
+<p>Try <code>!Shape.Area@SQUAREMILES!</code> in Python to calculate a field</p>
+
+</div>
+</div>
+</div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="k">print</span><span class="p">(</span><span class="s">&quot;Try !Shape.Area@SQUAREMILES! in Field Calculator or in Python&quot;</span><span class="p">)</span>
-<span class="c">#arcpy.CalculateField_management(fc, &quot;AREA_SQMI&quot;,&quot;!Shape.Area@SQUAREMILES!&quot;,&quot;PYTHON&quot;)</span>
-<span class="c">#Lots of units are available</span>
+<div class=" highlight hl-ipython2"><pre><span class="n">arcpy</span><span class="o">.</span><span class="n">CalculateField_management</span><span class="p">(</span><span class="n">fc</span><span class="p">,</span> <span class="s">&quot;AREA_SQMI&quot;</span><span class="p">,</span> <span class="s">&quot;!Shape.Area@SQUAREMILES!&quot;</span><span class="p">,</span> <span class="s">&quot;PYTHON&quot;</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -2665,7 +2674,7 @@ What happens when you type the following? Why? What are the types? What are the 
 <div class=" highlight hl-ipython2"><pre><span class="c">##Open map.mxd, then run this in ArcMap&#39;s python window</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="n">mapdoc</span> <span class="o">=</span> <span class="n">arcpy</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">MapDocument</span><span class="p">(</span><span class="s">&quot;CURRENT&quot;</span><span class="p">)</span>
-<span class="n">home</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">)</span>
+<span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">)</span>
 <span class="n">map_dir</span> <span class="o">=</span> <span class="n">home</span> <span class="o">+</span> <span class="s">&quot;/pythonWorkshopWLIA2016&quot;</span>
 <span class="c">#Note: let&#39;s not save any changes!</span>
 
@@ -2731,7 +2740,7 @@ What happens when you type the following? Why? What are the types? What are the 
 <span class="n">arcpy</span><span class="o">.</span><span class="n">MakeFeatureLayer_management</span><span class="p">(</span><span class="n">map_dir</span><span class="o">+</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">+</span><span class="s">&#39;Point_Samples.shp&#39;</span><span class="p">,</span><span class="s">&#39;samples_lyr&#39;</span><span class="p">)</span>
 
 <span class="c">#   Use supports to check whether a layer supports a property. For example:</span>
-<span class="n">doesnt_support</span><span class="o">=</span><span class="p">[]</span>
+<span class="n">doesnt_support</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="k">for</span> <span class="n">lyr</span> <span class="ow">in</span> <span class="n">lyrlist</span><span class="p">:</span>
     <span class="k">if</span> <span class="n">lyr</span><span class="o">.</span><span class="n">supports</span><span class="p">(</span><span class="s">&#39;definitionquery&#39;</span><span class="p">)</span> <span class="o">==</span> <span class="bp">True</span><span class="p">:</span>
         <span class="k">print</span> <span class="n">lyr</span><span class="o">.</span><span class="n">name</span>
@@ -2754,10 +2763,10 @@ What happens when you type the following? Why? What are the types? What are the 
 <div class=" highlight hl-ipython2"><pre><span class="c">#Symbolize Streams layer</span>
 
 <span class="c">#Use .index() method to find the &quot;index&quot; for the item &quot;Streams&quot; in lyrnames</span>
-<span class="n">listind</span><span class="o">=</span><span class="n">lyrnames</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&quot;Streams&quot;</span><span class="p">)</span>
+<span class="n">listind</span> <span class="o">=</span> <span class="n">lyrnames</span><span class="o">.</span><span class="n">index</span><span class="p">(</span><span class="s">&quot;Streams&quot;</span><span class="p">)</span>
 <span class="k">print</span><span class="p">(</span><span class="n">listind</span><span class="p">)</span>
 <span class="c">#  &amp; use that index to find the correct Map Layer object in lyrlist</span>
-<span class="n">streamlyr</span><span class="o">=</span><span class="n">lyrlist</span><span class="p">[</span><span class="n">listind</span><span class="p">]</span>
+<span class="n">streamlyr</span> <span class="o">=</span> <span class="n">lyrlist</span><span class="p">[</span><span class="n">listind</span><span class="p">]</span>
 
 <span class="c"># Check to see if symbology is supported by the layer</span>
 <span class="k">print</span><span class="p">(</span><span class="n">streamlyr</span><span class="o">.</span><span class="n">supports</span><span class="p">(</span><span class="s">&quot;Symbology&quot;</span><span class="p">))</span>
@@ -2765,8 +2774,8 @@ What happens when you type the following? Why? What are the types? What are the 
 <span class="c">#Since no symbology is supported, we have to update the layer</span>
 <span class="n">arcpy</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">UpdateLayer</span><span class="p">(</span><span class="n">dflist</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="n">streamlyr</span><span class="p">,</span>
         <span class="c">#Sometimes you must reference a layer object, not just the file - so we use arcpy.mapping.Layer</span>
-        <span class="n">arcpy</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="n">map_dir</span><span class="o">+</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">+</span><span class="s">&quot;Streams.lyr&quot;</span><span class="p">),</span>
-        <span class="s">&quot;True&quot;</span><span class="p">)</span> <span class="c">#Update only the symbology - not other details from Streams.lyr</span>
+        <span class="c">#Update only the symbology - not other details from Streams.lyr</span>
+        <span class="n">arcpy</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="n">map_dir</span><span class="o">+</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">+</span><span class="s">&quot;Streams.lyr&quot;</span><span class="p">),</span> <span class="s">&quot;True&quot;</span><span class="p">)</span>
 <span class="n">arcpy</span><span class="o">.</span><span class="n">RefreshActiveView</span><span class="p">()</span>
 
 <span class="c">#If symbology is supported, print out the labels for the symbol classes</span>
@@ -2853,12 +2862,12 @@ What happens when you type the following? Why? What are the types? What are the 
 <div class="prompt input_prompt">In&nbsp;[&nbsp;]:</div>
 <div class="inner_cell">
     <div class="input_area">
-<div class=" highlight hl-ipython2"><pre><span class="c">#When a MapDocument is referenced in a script, the .mxd is locked.  </span>
-<span class="c">#   It is good practice to remove the lock in code. For example:</span>
+<div class=" highlight hl-ipython2"><pre><span class="c"># When a MapDocument is referenced in a script, the .mxd is locked.  </span>
+<span class="c"># It is good practice to remove the lock in code. For example:</span>
 <span class="k">del</span> <span class="n">mapdoc</span>
 
 
-<span class="c">#Close ArcMap, but don&#39;t save the changes!!</span>
+<span class="c"># Close ArcMap, but don&#39;t save the changes!!</span>
 </pre></div>
 
 </div>
@@ -2903,7 +2912,7 @@ What happens when you type the following? Why? What are the types? What are the 
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span class="kn">import</span> <span class="nn">os</span><span class="o">,</span> <span class="nn">arcpy</span>
-<span class="n">home</span><span class="o">=</span><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">)</span>
+<span class="n">home</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">expanduser</span><span class="p">(</span><span class="s">&quot;~&quot;</span><span class="p">)</span>
 <span class="n">map_dir</span> <span class="o">=</span> <span class="n">home</span> <span class="o">+</span> <span class="s">&quot;/pythonWorkshopWLIA2016&quot;</span>
 <span class="kn">from</span> <span class="nn">arcpy</span> <span class="kn">import</span> <span class="n">mapping</span> <span class="k">as</span> <span class="n">m</span>
 
@@ -2913,13 +2922,13 @@ What happens when you type the following? Why? What are the types? What are the 
 
 <span class="c"># Add Point_Samples.shp to the map</span>
 <span class="n">m</span><span class="o">.</span><span class="n">AddLayer</span><span class="p">(</span><span class="n">df</span><span class="p">,</span><span class="n">arcpy</span><span class="o">.</span><span class="n">mapping</span><span class="o">.</span><span class="n">Layer</span><span class="p">(</span><span class="n">map_dir</span><span class="o">+</span><span class="n">os</span><span class="o">.</span><span class="n">sep</span><span class="o">+</span><span class="s">&quot;Point_Samples.shp&quot;</span><span class="p">))</span>
-<span class="n">sample_lyr</span><span class="o">=</span><span class="n">m</span><span class="o">.</span><span class="n">ListLayers</span><span class="p">(</span><span class="n">mxd</span><span class="p">,</span><span class="s">&#39;*Sampl*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">sample_lyr</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ListLayers</span><span class="p">(</span><span class="n">mxd</span><span class="p">,</span><span class="s">&#39;*Sampl*&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 
 <span class="n">authoritem</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">ListLayoutElements</span><span class="p">(</span><span class="n">mxd</span><span class="p">,</span> <span class="s">&#39;TEXT_ELEMENT&#39;</span><span class="p">,</span> <span class="s">&#39;author&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span>
 <span class="n">authoritem</span><span class="o">.</span><span class="n">text</span> <span class="o">=</span> <span class="n">authoritem</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&quot;AUTHORNAME&quot;</span><span class="p">,</span><span class="n">mxd</span><span class="o">.</span><span class="n">author</span><span class="p">)</span>
 
 <span class="c">#For now, we&#39;ll write out the streams.  Later, you can use Search Cursors to make the list.</span>
-<span class="n">streams</span><span class="o">=</span><span class="p">[</span><span class="s">&quot;Sugar River&quot;</span><span class="p">,</span><span class="s">&quot;Halfway Prairie Creek&quot;</span><span class="p">,</span><span class="s">&quot;Black Earth Creek&quot;</span><span class="p">]</span>
+<span class="n">streams</span> <span class="o">=</span> <span class="p">[</span><span class="s">&quot;Sugar River&quot;</span><span class="p">,</span><span class="s">&quot;Halfway Prairie Creek&quot;</span><span class="p">,</span><span class="s">&quot;Black Earth Creek&quot;</span><span class="p">]</span>
 <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">streams</span><span class="p">:</span>
     <span class="k">print</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
     <span class="n">arcpy</span><span class="o">.</span><span class="n">SelectLayerByAttribute_management</span><span class="p">(</span><span class="n">sample_lyr</span><span class="p">,</span> <span class="s">&#39;NEW_SELECTION&#39;</span><span class="p">,</span> <span class="s">&#39;&quot;WATERBODY&quot; = &#39;</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span> <span class="o">+</span> <span class="n">i</span> <span class="o">+</span> <span class="s">&quot;&#39;&quot;</span><span class="p">)</span>
